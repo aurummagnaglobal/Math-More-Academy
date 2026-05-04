@@ -2,32 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Aurum Magna Global | Math-More-Academy</title>
+    <title>Live Session | Math-More-Academy</title>
     <style>
-        body { background-color: #000000; color: #D4AF37; font-family: 'Segoe UI', sans-serif; text-align: center; padding: 50px; }
-        .header { border-bottom: 2px solid #D4AF37; padding-bottom: 20px; margin-bottom: 40px; }
-        .btn { background-color: #D4AF37; color: #000; padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block; margin: 10px; border: none; cursor: pointer; }
-        .btn:hover { background-color: #f1c40f; transform: scale(1.05); transition: 0.3s; }
-        .status-box { border: 1px solid #D4AF37; padding: 20px; display: inline-block; margin-top: 30px; background: rgba(212, 175, 55, 0.1); }
+        body { background-color: #f5f7f9; color: #333; font-family: 'Segoe UI', sans-serif; display: flex; flex-direction: column; height: 100vh; margin: 0; }
+        .nav { background-color: #87CEEB; color: white; padding: 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .chat-container { flex: 1; padding: 20px; overflow-y: auto; background: white; border: 1px solid #e1e4e8; margin: 20px; border-radius: 8px; }
+        .message { margin-bottom: 15px; padding: 12px; border-radius: 15px; max-width: 75%; font-size: 0.95rem; }
+        .teacher { background: #e0f2f7; border-left: 5px solid #00BFFF; align-self: flex-start; color: #005f73; }
+        .student { background: #87CEEB; color: white; align-self: flex-end; margin-left: auto; }
+        .input-area { padding: 20px; background: white; border-top: 2px solid #87CEEB; display: flex; gap: 10px; }
+        input { flex: 1; border: 2px solid #87CEEB; border-radius: 20px; padding: 10px 20px; outline: none; }
+        button { background: #00BFFF; color: white; border: none; padding: 10px 25px; border-radius: 20px; font-weight: bold; cursor: pointer; }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>AURUM MAGNA GLOBAL</h1>
-        <p>Managed by Managing Director: SHIRAJ BHATTACHARYA</p>
-        <h3>Sovereign AI Math-More-Academy</h3>
+    <div class="nav">
+        <span>MATH-MORE-ACADEMY | LIVE</span>
+        <span>Teacher: <strong>VIKRAM</strong></span>
     </div>
-    
-    <div>
-        <a href="dashboard/" class="btn">STUDENT DASHBOARD</a>
-        <a href="sessions/" class="btn">LIVE CLASSROOM</a>
-        <a href="payments/" class="btn">SUBSCRIPTION PORTAL</a>
+    <div class="chat-container" id="chat">
+        <div class="message teacher"><strong>VIKRAM:</strong> The session is active. Today's focus is Class 12 Calculus. Precision is mandatory. What is your query?</div>
     </div>
-
-    <div class="status-box">
-        <p><strong>SYSTEM STATUS:</strong> <span style="color: #00FF00;">ACTIVE</span></p>
-        <p><strong>AI PERSONAS:</strong> VIKRAM & ANANYA (FIRM VOICE ENABLED)</p>
-        <p><strong>LAB STATUS:</strong> 10-YEAR PYQ ARCHIVE SYNCED</p>
+    <div class="input-area">
+        <input type="text" id="userInput" placeholder="Ask your question...">
+        <button onclick="sendMessage()">SEND</button>
     </div>
+    <script>
+        function sendMessage() {
+            const input = document.getElementById('userInput');
+            const chat = document.getElementById('chat');
+            if (!input.value.trim()) return;
+            const sMsg = document.createElement('div');
+            sMsg.className = 'message student';
+            sMsg.innerHTML = `<strong>YOU:</strong> ${input.value}`;
+            chat.appendChild(sMsg);
+            setTimeout(() => {
+                const tMsg = document.createElement('div');
+                tMsg.className = 'message teacher';
+                tMsg.innerHTML = `<strong>VIKRAM:</strong> Logic first. Show your steps before I provide the validation.`;
+                chat.appendChild(tMsg);
+                chat.scrollTop = chat.scrollHeight;
+            }, 1000);
+            input.value = "";
+            chat.scrollTop = chat.scrollHeight;
+        }
+    </script>
 </body>
 </html>
