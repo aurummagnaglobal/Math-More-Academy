@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Subscription Portal | Math-More-Academy</title>
+    <style>
+        body { background-color: #f5f7f9; color: #333; font-family: 'Segoe UI', sans-serif; text-align: center; padding: 40px; }
+        .tier-container { display: flex; justify-content: center; gap: 20px; margin-top: 30px; flex-wrap: wrap; }
+        .card { background: white; border: 2px solid #87CEEB; border-radius: 15px; padding: 25px; width: 250px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: 0.3s; }
+        .card:hover { transform: translateY(-10px); border-color: #00BFFF; }
+        .price { font-size: 2rem; color: #0077b6; margin: 15px 0; }
+        .btn { background-color: #87CEEB; color: white; padding: 12px 25px; text-decoration: none; border-radius: 25px; font-weight: bold; display: block; margin-top: 20px; }
+        .locked { color: #888; font-style: italic; font-size: 0.8rem; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h1 style="color: #0077b6;">SUBSCRIPTION PORTAL</h1>
+    <p>Flexible learning options for every student.</p>
+
+    <div class="tier-container">
+        <!-- Tier 1: Single Topic -->
+        <div class="card">
+            <h3>Single Topic</h3>
+            <p>Access to 1 Live Session</p>
+            <div class="price">₹499</div>
+            <a href="#" class="btn">SUBSCRIBE</a>
+            <p class="locked">⚠️ No Test Access Included</p>
+        </div>
+
+        <!-- Tier 2: Practice Add-on -->
+        <div class="card" style="border-color: #00BFFF;">
+            <h3>Practice Lab</h3>
+            <p>Unlocks 10-Year Papers</p>
+            <div class="price">₹299</div>
+            <a href="#" class="btn" style="background-color: #00BFFF;">UNLOCK NOW</a>
+            <p style="color: #28a745; font-size: 0.8rem;">✔️ Includes AI-Generated Tests</p>
+        </div>
+
+        <!-- Tier 3: Subject Master -->
+        <div class="card">
+            <h3>Full Subject</h3>
+            <p>Monthly Access</p>
+            <div class="price">₹2,499</div>
+            <a href="#" class="btn">SUBSCRIBE</a>
+            <p style="color: #28a745; font-size: 0.8rem;">✔️ All Classes & Tests Included</p>
+        </div>
+    </div>
+    
+    <p style="margin-top: 50px;"><a href="../" style="color: #87CEEB; text-decoration: none;">← Back to Dashboard</a></p>
+</body>
+</html>
